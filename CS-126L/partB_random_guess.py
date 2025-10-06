@@ -23,6 +23,7 @@ def main():
         guess_list.append(start_game())
         play_again = input("Do you want to play again? ")
         play_again = play_again.lower()
+        print()
 
     total_guesses = sum(guess_list)
 
@@ -78,7 +79,6 @@ def print_results(total_games, total_guesses, guess_list):
     guesses_per_game = round(total_guesses / total_games, 1)
     guess_list.sort()
 
-    print()
     print("Overall results:")
     print(f"Total Games = {total_games}")
     print(f"Total Guesses = {total_guesses}")
