@@ -15,14 +15,15 @@ def main():
     print("Think you can do it?")
 
     total_games = 0
-    total_guesses = 0
     guess_list = []
     play_again = "yes"
 
     while play_again.startswith("y"):
         total_games += 1
-        total_guesses += start_game()
+        guess_list.append(start_game())
         play_again = input("Do you want to play again? ")
+
+    total_guesses = sum(guess_list)
 
         # user_guess = int(input("Your guess? "))
         # number_of_guesses += 1
@@ -60,7 +61,9 @@ def start_game():
     print(f"I'm thinking of a number between 1 and {MAX_NUMBER}...")
 
     while user_guess != random_number:
+
         user_guess = int(input("Your guess? "))
+
         number_of_guesses += 1
         if user_guess == random_number:
             print(f"You got it right in {number_of_guesses} guesses!")
@@ -72,11 +75,19 @@ def start_game():
             print("It's higher.")
             
 # A function that displays
-def print_results():
+def print_results(total_games, total_guesses, guess_list):
     # Required input (parameters): game tallies
     # Required return: none
     # Device input: none
     # Device output: overall results table
+
+    guesses_per_game = round(total_guesses / total_games, 1)
+    guess_list.sort()
+
     print("Overall results:")
+    print(f"Total Games = {total_games}")
+    print(f"Total Guesses = {total_guesses}")
+    print(f"Guesses/Game = {guesses_per_game}")
+    print(f"Best Game = {guess_list[0]} guesses")
 
 main()
