@@ -63,3 +63,28 @@ def smallest_largest():
     print("Largest =", num_array[-1])
 
 # smallest_largest()
+
+# Write a function named quadratic that solves quadratic equations and prints their roots. Recall that a quadratic equation is a polynomial equation in terms of a variable x of the form ax2 + bx + c = 0. Here are some example equations and their roots:
+
+# x2 - 7x + 12: x = -4, x = -3
+# x2 + 3x + 2: x = -2, x = -1
+# Your function should accept the coefficients a, b, and c as parameters and should print the roots of the equation in the following format. (You may assume that the equation has two real roots, though mathematically this is not always the case.) For example, the call of quadratic(1, -7, 12) should print:
+
+# First root = 4.0
+# Second root = 3.0
+# The "quadratic formula" used to solve a quadratic equation is:
+
+# x = ( -b +/- ( (b**2) - (4 * a * c) )**0.5) / (2 * a)
+
+# You may assume that the equation has two real roots, though mathematically this is not always the case.
+
+# Also, there should be two roots, one the result of the addition, the other, the result of the subtraction. Print the root resulting from the addition first.
+
+def quadratic(a, b, c):
+    root_1 = ( -b + ( (b**2) - (4 * a * c) )**0.5) / (2 * a)
+    root_2 = ( -b - ( (b**2) - (4 * a * c) )**0.5) / (2 * a)
+
+    print(f"First root = {root_1}")
+    print(f"Second root = {root_2}")
+
+quadratic(1, -7, 12)
