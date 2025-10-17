@@ -15,12 +15,12 @@ HEIGHT = 500
 
 def main():
 
-    # setworldcoordinates(0, HEIGHT, WIDTH, 0)
-    # clear()
+    turtle.setworldcoordinates(0, HEIGHT, WIDTH, 0)
+    turtle.clear()
     # shape('turtle')
     # pencolor('olive drab')
     # fillcolor('sienna')
-    # bgcolor('grey')
+    turtle.bgcolor('white')
 
     print_intro_message()
 
@@ -53,6 +53,7 @@ def main():
 
     state_data = get_state_details(districts_list, state_input)
     if state_data:
+        eligible_voters = 0
         # check if state exists or not
         # if state_input in voters_data:
 
@@ -60,9 +61,12 @@ def main():
         # state_data because that info wasn't originally there
         for state_index in range(len(voters_list)):
             if state_input in voters_list[state_index]:
-                state_data.append(voters_list[state_index][1])
+                eligible_voters = voters_list[state_index[1]]
+                state_data.append(eligible_voters)
 
         process_state_details(state_data)
+        state_name = staet_data[0]
+        draw_intro_graphics(state_name, eligible_voters)
     else:
         # if not, print state not found
         print("State not found")
@@ -79,7 +83,10 @@ def print_intro_message():
 # function to print state name, eligible voters and
 # horizontal and vertical lines to panel
 def draw_intro_graphics(state_name, eligible_voters):
-    pass
+   turtle.penup()
+   turtle.goto(0, 100)
+   turtle.pendown() 
+   turtle.write("Text at top center", align="center")
 
 # function to check whether state exists or not
 # if exits, returns the state details line
