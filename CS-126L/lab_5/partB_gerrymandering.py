@@ -17,6 +17,7 @@ def main():
 
     turtle.setworldcoordinates(0, HEIGHT, WIDTH, 0)
     turtle.clear()
+    turtle.speed(0)
     # shape('turtle')
     # pencolor('olive drab')
     # fillcolor('sienna')
@@ -49,7 +50,8 @@ def main():
     # print(voters_list)
 
     # take state input
-    state_input = input("Which state do you want to look up? ").lower()
+    # state_input = input("Which state do you want to look up? ").lower()
+    state_input = "arizona"
 
     state_data = get_state_details(districts_list, state_input)
     if state_data:
@@ -61,12 +63,13 @@ def main():
         # state_data because that info wasn't originally there
         for state_index in range(len(voters_list)):
             if state_input in voters_list[state_index]:
-                eligible_voters = voters_list[state_index[1]]
+                eligible_voters = voters_list[state_index][1]
                 state_data.append(eligible_voters)
 
         process_state_details(state_data)
-        state_name = staet_data[0]
+        state_name = state_data[0]
         draw_intro_graphics(state_name, eligible_voters)
+        draw_district_graphics(0, 0, 0)
     else:
         # if not, print state not found
         print("State not found")
@@ -83,10 +86,25 @@ def print_intro_message():
 # function to print state name, eligible voters and
 # horizontal and vertical lines to panel
 def draw_intro_graphics(state_name, eligible_voters):
-   turtle.penup()
-   turtle.goto(0, 100)
-   turtle.pendown() 
-   turtle.write("Text at top center", align="center")
+    state_name_list = state_name.split()
+    for word in range(len(state_name_list)):
+        state_name_list[word] = state_name_list[word].capitalize()
+    state_name = " ".join(state_name_list)
+
+    turtle.penup()
+    turtle.goto(0, 7)
+    turtle.write(f"{state_name}")
+    turtle.goto(500, 7)
+    turtle.write(f"{eligible_voters} eligible voters", align="right")
+    turtle.goto(-10, 10)
+    turtle.pendown()
+    turtle.goto(510, 10)
+    turtle.penup()
+    turtle.goto(250, -10)
+    turtle.pendown()
+    turtle.goto(250, 510)
+    turtle.penup()
+    turtle.goto(0, 15)
 
 # function to check whether state exists or not
 # if exits, returns the state details line
@@ -134,7 +152,10 @@ def process_state_details(state_details):
 # function which caluculate the width of dem_votes and gop_votes
 # and print the rectangles to the panel using the y_index as starting point
 def draw_district_graphics(dem_votes, gop_votes, y_index):
-    pass
+
+
+
+    turtle.done()
 
 # function to check whether the votes are gerrymandered or not
 # and prints out a message if the state is gerrymandered.
