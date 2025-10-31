@@ -18,9 +18,6 @@ def main():
     turtle.setworldcoordinates(0, HEIGHT, WIDTH, 0)
     turtle.clear()
     turtle.speed(0)
-    # shape('turtle')
-    # pencolor('olive drab')
-    # fillcolor('sienna')
     turtle.bgcolor('white')
 
     print_intro_message()
@@ -46,15 +43,16 @@ def main():
     for state in range(len(voters_list)):
         voters_list[state] = voters_list[state].split(",")
 
-    # print(districts_list)
-    # print(voters_list)
-
     # take state input
-    # state_input = input("Which state do you want to look up? ").lower()
-    state_input = "arizona"
+    state_input = input("Which state do you want to look up? ").lower()
 
     state_data = get_state_details(districts_list, state_input)
     if state_data:
+
+        print()
+        print("Drawing voter graph with Turtle...")
+        print()
+
         eligible_voters = 0
         # check if state exists or not
         # if state_input in voters_data:
@@ -66,10 +64,12 @@ def main():
                 eligible_voters = voters_list[state_index][1]
                 state_data.append(eligible_voters)
 
-        process_state_details(state_data)
         state_name = state_data[0]
         draw_intro_graphics(state_name, eligible_voters)
-        draw_district_graphics(0, 0, 0)
+
+        process_state_details(state_data)
+        turtle.hideturtle()
+        turtle.done()
     else:
         # if not, print state not found
         print("State not found")
@@ -128,7 +128,7 @@ def process_state_details(state_details):
     for i in range(1, len(state_details), 3):
         state_districts.append(state_details[i:i + 3])
     
-    print(state_districts)
+    # print(state_districts)
 
     wasted_dem_votes = 0
     wasted_gop_votes = 0
@@ -136,6 +136,8 @@ def process_state_details(state_details):
     for district_index in range(len(state_districts)):
         dem_votes = int(state_districts[district_index][1])
         gop_votes = int(state_districts[district_index][2])
+
+        draw_district_graphics(dem_votes, gop_votes, district_index)
 
         wasted_votes = calculate_wastage(dem_votes, gop_votes)
         wasted_dem_votes += wasted_votes[0]
@@ -153,9 +155,11 @@ def process_state_details(state_details):
 # and print the rectangles to the panel using the y_index as starting point
 def draw_district_graphics(dem_votes, gop_votes, y_index):
 
+    total_votes = dem_votes + gop_votes
 
+    draw_rect(0, 15 + (y_index * 25), (dem_votes / total_votes) * WIDTH, 20, "blue")
+    draw_rect(WIDTH, 15 + (y_index * 25), -(gop_votes / total_votes) * WIDTH, 20, "red")
 
-    turtle.done()
 
 # function to check whether the votes are gerrymandered or not
 # and prints out a message if the state is gerrymandered.

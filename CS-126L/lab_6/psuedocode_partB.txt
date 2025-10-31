@@ -1,0 +1,91 @@
+define read dna file function and pass through filename as parameter
+    use with open to read the passed through filename
+        use .read() to read the lines
+    
+    put the data in a list
+
+
+    use a for loop to put the even items in the seq list
+        if even
+            append to seq
+        else:
+            put in odd list
+    
+    return seq and seq name
+
+define count nucleotides function and pass through sequence as parameter
+    make a count for each nucleotide type
+    a = 0
+    c = 0
+    g = 0
+    t = 0
+    
+    use for loop to loop over sequence
+        if nucleotide is a
+            a += 1
+        elif nucleotide is c
+            c += 1
+        elif nucleotide is g
+            g += 1
+        elif nucleotide is t
+            t += 1
+    
+    return array of nucleotide counts
+
+define calculate mass percentage function and pass through the count array, nucleotide string as parameters
+    set the junk count equal to the the length of the nucleotide string - the sum of all the nucleotide counts
+
+    set mass a to the nucleotide count of a * it's mass
+    set mass c to the nucleotide count of a * it's mass
+    set mass g to the nucleotide count of a * it's mass
+    set mass t to the nucleotide count of a * it's mass
+
+    set the total mass equal to all the sum of all the masses and round to one decimal place
+
+    set a percentage to the (mass of a / the total mass) * 100 and round to one decimal place
+    set c percentage to the (mass of c / the total mass) * 100 and round to one decimal place
+    set g percentage to the (mass of g / the total mass) * 100 and round to one decimal place
+    set t percentage to the (mass of t / the total mass) * 100 and round to one decimal place
+
+    return an array of all the mass percentages, and the total mass
+
+define get codons function and pass through the nucleotide string as a parameter
+    use for loop to go over each nucleotide in the nucleotide string
+        if the nucleotide isn't a "-"
+            add the nucleotide to a temporary codon
+            if the temporary codon's length is == 3
+                append it to the codons list
+                clear the temporary codon
+    
+    return the codon list
+
+define is Protein function and pass through codon list, nucleotide count list, and total mass as parameters
+    set the c and g mass equal to the (sum of c count and g count / the total mass) * 100
+
+    if the length of the codons list is at least 5 AND the first codon == "ATG" AND the last codon is either "TAA", "TAG", or "TGA" AND the c and g mass percentage is greater than 30
+        return "YES"
+    else
+        return "NO"
+
+define main function
+    ask for user input for input filename
+    call the read dna file function, pass through the filename and store it in seq_name and seqs
+
+    ask for user input for output filename
+    use with open "w" to write to the passed through output filename
+
+        use a for loop to loop over all of the sequences
+            call the count nucleotides function, pass through the nucleotide string and store it in nuc_count_list
+            call the calculate mass percentage function and pass through nuc_count_list and nucleotide string, and store it in mass percent list
+            call get codons function, pass through nucleotide string, and store it in codons list
+            call is Protein function, pass through codon list, nuc_count_list, and total mass, and store it in nuc_is_protein
+
+            write to the output file the region name from the seq_name list
+            write to the output file the nucleotides from the seqs list
+            write to the output file the nuc counts using the nuc count list variable
+            write to the output file tht total mass percent from the mass percent list and total mass
+            write to the output file the codons list from the codons list variable
+            write to the output file if its a protein from the nuc_is_protein variable
+
+
+call the main function
