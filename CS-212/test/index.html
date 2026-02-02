@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo Marquez - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            height: 100vh;
+        }
+
+        .header {
+            grid-area: header;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .sidebar nav {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .sidebar nav a {
+            width: 100%;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: left;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .resume-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 20px;
+            right: 20px;
+            background-color: #667eea;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+            width: 90%;
+        }
+
+        .resume-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.5);
+            background: #764ba2;
+        }
+
+        .main-content {
+            grid-area: main;
+            overflow-y: auto;
+            padding: 40px;
+            background-color: #f5f5f5;
+        }
+
+        .summary {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #667eea;
+        }
+
+        .summary h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .summary h3 {
+            color: #667eea;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .summary p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #764ba2;
+        }
+
+        .skills h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .skills-category {
+            margin-bottom: 20px;
+        }
+
+        .skills-category h3 {
+            color: #764ba2;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Projects Section */
+        .projects {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #3498db;
+        }
+
+        .projects h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+            border-color: #667eea;
+        }
+
+        .project-card h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            padding: 20px 20px 10px 20px;
+            margin: 0;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 0 20px;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e0e0e0;
+        }
+
+        /* Education and Experience Section */
+        .education-experience {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #2ecc71;
+        }
+
+        .education-experience h2 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .education-experience h3 {
+            color: #2ecc71;
+            font-size: 18px;
+            margin: 20px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .education-experience h3:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        table thead {
+            background-color: #f0f0f0;
+        }
+
+        table th {
+            padding: 12px;
+            text-align: left;
+            color: #2c3e50;
+            font-weight: 600;
+            border-bottom: 2px solid #2ecc71;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+            color: #555;
+        }
+
+        table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .education-experience p {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .education-experience p i {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Footer Section */
+        .footer {
+            grid-area: footer;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .copyright {
+            position: absolute;
+            right: 40px;
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* Scrollbar Styling */
+        .main-content::-webkit-scrollbar,
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .main-content::-webkit-scrollbar-track,
+        .sidebar::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+
+        .main-content::-webkit-scrollbar-thumb,
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+
+        .main-content::-webkit-scrollbar-thumb:hover,
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #764ba2;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-rows: 100px auto 1fr 100px;
+                grid-template-areas:
+                    "header"
+                    "sidebar"
+                    "main"
+                    "footer";
+                height: auto;
+            }
+
+            .sidebar {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 15px;
+                gap: 5px;
+                min-height: auto;
+                position: relative;
+            }
+
+            .sidebar nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+            .sidebar nav a {
+                flex: 0 1 auto;
+                padding: 10px 15px;
+                border-left: none;
+                border-bottom: 2px solid transparent;
+            }
+
+            .sidebar nav a:hover {
+                border-left: none;
+                border-bottom-color: #3498db;
+            }
+
+            .resume-btn {
+                position: static;
+                width: auto;
+                flex: 0 1 auto;
+                margin: 0;
+                left: auto;
+                right: auto;
+                bottom: auto;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .copyright {
+                position: static;
+                right: auto;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Leo Marquez</h1>
+    </header>
+
+    <aside class="sidebar">
+        <nav>
+            <a href="#summary">Summary</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact Information</a>
+        </nav>
+        <a href="Leo_Marquez_Resume.pdf" download class="resume-btn">Download Resume</a>
+    </aside>
+
+    <main class="main-content">
+        <section class="summary" id="summary">
+            <h2>Professional Summary</h2>
+            <h3>Information Security Specialist</h3>
+            <p>My name is Leo and I am from Buckeye AZ and currently attending NAU for a bachelor's degree in Computer
+                Science and a minor in Cybersecurity. I'm currently working for the ITS security department at my
+                university. I hope to work in the technology field after graduation.</p>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2>Skills</h2>
+
+            <div class="skills-category">
+                <h3>Programming Languages & Technologies</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML/CSS</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">C</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">Git/GitHub</span>
+                </div>
+            </div>
+
+            <div class="skills-category">
+                <h3>Soft Skills</h3>
+                <div class="skills-container">
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Critical Thinking</span>
+                    <span class="skill-tag">Adaptability</span>
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Team Collaboration</span>
+                    <span class="skill-tag">Time Management</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Edumon</h3>
+                    <p>For this project, I created Edumon, a complex full-stack turn-based RPG where players collect and
+                        battle monsters by answering educational questions to determine the success of their moves. I
+                        used React Native for the frontend, implemented async storage for managing game state and user
+                        progression, and added subject and difficulty customization to tailor the learning experience.
+                        The app also includes animations, audio integration, and pixel art visuals to provide a
+                        seamless, engaging experience.</p>
+                    <img src="edumon.png" alt="Screenshot of Edumon game made in React Native">
+                </div>
+
+                <div class="project-card">
+                    <h3>Culinary Showdown</h3>
+                    <p>This game was built using HTML, CSS, and JavaScript and encompasses all of the topics I have
+                        learned in my first semester of West-MEC. It is a typing/adventure game (mostly) complete with
+                        audio, interactivity, and just a few bugs. It utilizes the JS canvas, eventlisteners, inputs,
+                        arrays, and loops which append elements to the DOM. This is just scraping the surface of what
+                        this game covers, but I plan to make my projects more in-depth and entertaining in the future.
+                    </p>
+                    <img src="culinary-showdown.png"
+                        alt="Screenshot of Culinary Showdown game made with JavaScript, HTML, and CSS">
+                </div>
+            </div>
+        </section>
+
+        <section class="education-experience" id="education">
+            <h2>Education and Experience</h2>
+
+            <h3>Education</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>School Name</th>
+                        <th>Degree</th>
+                        <th>Years Attended</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>North Arizona University</td>
+                        <td>B.S. Computer Science, Minor in Cybersecurity</td>
+                        <td>2025-Present</td>
+                    </tr>
+                    <tr>
+                        <td>West-MEC</td>
+                        <td>Certificate in Programming and Software Development</td>
+                        <td>2023-2025</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Experience</h3>
+            <p><b>ITS Security Department, NAU</b> - Information Security Specialist <i>(2025-Present)</i></p>
+            <p><b>Agua Fria High School District</b> - Graphic Design Student Intern <i>(2024-2025)</i></p>
+            <p><b>Tillys</b> - Sales Associate <i>(2023-2025)</i></p>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="contact-info">
+            <div class="contact-info-item">
+                <b>Email:</b> <a href="mailto:marquez.leo100@gmail.com">marquez.leo100@gmail.com</a>
+            </div>
+            <div class="contact-info-item">
+                <b>Phone:</b> (623)703-4686
+            </div>
+            <div class="contact-info-item">
+                <b>Github:</b> <a href="https://github.com/LJMarquez">LJMarquez</a>
+            </div>
+            <div class="contact-info-item">
+                <b>LinkedIn:</b> <a href="https://www.linkedin.com/in/leo-juan-marquez-960598296/">Leo Marquez</a>
+            </div>
+        </div>
+        <div class="copyright">&copy; 2026 Leo Marquez</div>
+    </footer>
+</body>
+
+</html>
