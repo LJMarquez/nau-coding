@@ -8,6 +8,7 @@ let projectsContainer = document.getElementById("projects-container");
 let resumeDownloadCountElement = document.getElementById("resume-download-count");
 
 const name = "Leo";
+let resumeDownloadCount = 0;
 
 let projectTitles = ["Edumon", "Culinary Showdown", "Stock Trader"];
 let projectImages = ["edumon.png", "culinary-showdown.png", "stock-trading.jpeg"];
@@ -120,3 +121,81 @@ for (let i = 0; i < projectTitles.length; i++) {
     cardBody.appendChild(deadlineElement);
     cardBody.appendChild(currentStateElement);
 }
+
+function addResumeDownloadCount() {
+    resumeDownloadCount++;
+    resumeDownloadCountElement.innerText = resumeDownloadCount;
+}
+
+let educationTableContainer = document.getElementById("education-table-container");
+let experienceTableContainer = document.getElementById("experience-table-container");
+
+let educationTableHeaders = ["School Name", "Degree", "Graduation Year"];
+let educationTableData = [
+    ["Northern Arizona University", "B.A. in Computer Science, Minor in Cybersecurity", "2029"],
+    ["West-MEC Central Campus", "Certificate in Application Development & JavaScript", "2025"]
+];
+
+let experienceTableHeaders = ["Organization", "Position", "Duration"];
+let experienceTableData = [
+    ["NAU Information Technology Services", "Information Security Services Student Employee", "2025 - Present"],
+    ["Agua Fria High School District", "Graphic Design Intern", "2024 - 2025"]
+];
+
+let educationTable = document.createElement("table");
+educationTable.classList.add("table", "table-striped", "table-hover", "align-middle");
+let educationTableHead = document.createElement("thead");
+educationTableHead.classList.add("table-dark");
+let educationHeaderRow = document.createElement("tr");
+for (let i = 0; i < educationTableHeaders.length; i++) {
+    let header = document.createElement("th");
+    header.innerText = educationTableHeaders[i];
+    educationHeaderRow.appendChild(header);
+}
+educationTableHead.appendChild(educationHeaderRow);
+educationTable.appendChild(educationTableHead);
+
+let educationTableBody = document.createElement("tbody");
+
+for (let i = 0; i < educationTableData.length; i++) {
+    let row = document.createElement("tr");
+    for (let j = 0; j < educationTableData[i].length; j++) {
+        let cell = document.createElement("td");
+        cell.innerText = educationTableData[i][j];
+        row.appendChild(cell);
+    }
+    educationTableBody.appendChild(row);
+}
+
+educationTable.appendChild(educationTableBody);
+educationTableContainer.appendChild(educationTable);
+
+
+
+let experienceTable = document.createElement("table");
+experienceTable.classList.add("table", "table-striped", "table-hover", "align-middle");
+let experienceTableHead = document.createElement("thead");
+experienceTableHead.classList.add("table-dark");
+let experienceHeaderRow = document.createElement("tr");
+for (let i = 0; i < experienceTableHeaders.length; i++) {
+    let header = document.createElement("th");
+    header.innerText = experienceTableHeaders[i];
+    experienceHeaderRow.appendChild(header);
+}
+experienceTableHead.appendChild(experienceHeaderRow);
+experienceTable.appendChild(experienceTableHead);
+
+let experienceTableBody = document.createElement("tbody");
+
+for (let i = 0; i < experienceTableData.length; i++) {
+    let row = document.createElement("tr");
+    for (let j = 0; j < experienceTableData[i].length; j++) {
+        let cell = document.createElement("td");
+        cell.innerText = experienceTableData[i][j];
+        row.appendChild(cell);
+    }
+    experienceTableBody.appendChild(row);
+}
+
+experienceTable.appendChild(experienceTableBody);
+experienceTableContainer.appendChild(experienceTable);

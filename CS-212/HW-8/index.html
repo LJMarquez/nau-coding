@@ -38,8 +38,8 @@
                     <li class="nav-item"><a class="nav-link link-opacity-75-hover" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link link-opacity-75-hover" href="#contact">Contact</a></li>
                 </ul>
-                <a href="Leo_Marquez_Resume.pdf" download class="btn btn-dark mt-1 mt-md-0" id="download-resume-btn">Download Resume</a>
-                <span id="resume-download-count" class="text-bg-light border ms-md-2 mt-2 mt-md-0 py-2 px-3">Resume Downloads: <span id="resume-download-count">0</span></span>
+                <a href="Leo_Marquez_Resume.pdf" download class="btn btn-dark mt-1 mt-md-0" id="download-resume-btn" onclick="addResumeDownloadCount()">Download Resume</a>
+                <span class="text-bg-light ms-md-2 mt-2 mt-md-0 py-2 px-3">Resume Downloads: <span id="resume-download-count">0</span></span>
             </div>
         </div>
     </nav>
@@ -150,60 +150,13 @@
                 <div class="row g-4">
                     <div class="col-12 col-xl-6">
                         <h3 class="h4 mb-3">Education</h3>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover align-middle">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>School Name</th>
-                                        <th>Degree</th>
-                                        <th>Years Attended</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>North Arizona University</td>
-                                        <td>B.S. Computer Science, Minor in Cybersecurity</td>
-                                        <td>2025 - Present</td>
-                                    </tr>
-                                    <tr>
-                                        <td>West-MEC</td>
-                                        <td>Certificate in Programming and Software Development</td>
-                                        <td>2023 - 2025</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div id="education-table-container" class="table-responsive">
                         </div>
                     </div>
 
                     <div class="col-12 col-xl-6">
                         <h3 class="h4 mb-3">Experience</h3>
-                        <div class="table-responsive">
-                            <table class="table table-striped table-hover align-middle">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>Organization</th>
-                                        <th>Role</th>
-                                        <th>Years</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>ITS Security Department, NAU</td>
-                                        <td>Information Security Specialist</td>
-                                        <td>2025 - Present</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Agua Fria High School District</td>
-                                        <td>Graphic Design Student Intern</td>
-                                        <td>2024 - 2025</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tillys</td>
-                                        <td>Sales Associate</td>
-                                        <td>2023 - 2025</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div id="experience-table-container" class="table-responsive">
                         </div>
                     </div>
                 </div>
