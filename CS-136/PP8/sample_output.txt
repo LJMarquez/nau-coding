@@ -1,0 +1,390 @@
+===============================================================================
+Sample 1: show the products in the vending machine
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________| ___________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 
+Thank you for shopping with us!
+
+===============================================================================
+Sample 2: the user selects an invalid product id
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 8
+Invalid Input! Please try again.
+
+Input the code of the product you want to purchase: 2
+Input the quantity of the product: 
+Thank you for shopping with us!
+
+===============================================================================
+Sample 3: the user selects an invalid quantity
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 0
+Input the quantity of the product: -1
+Input valid quantity
+Input the quantity of the product: 12
+We do not have enough stock. Please input smaller quantity.
+Input the quantity of the product: 8
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: -1
+Thank you for shopping with us!
+
+===============================================================================
+Sample 4: the user wants to continue shopping
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 0
+Input the quantity of the product: 2
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 0
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 8                  | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase:
+Thank you for shopping with us!
+
+
+===============================================================================
+Sample 5: the user wants to checkout
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 3
+Input the quantity of the product: 2
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 1
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 2 x Pepsi Soda 20oz Bottle              |  2 x 2.50  | 5.00         
+Order Total: 5.00
+
+Please review your order. Proceed with payment?
+Type 0 to confirm or any other key to cancel the order: 
+3
+Thank you for shopping with us!
+
+===============================================================================
+Sample 6: the user types an invalid option for continuing
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 0
+Input the quantity of the product: 2
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 5
+Invalid option. Please try again!
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: -1
+Thank you for shopping with us!
+
+===============================================================================
+Sample 7: the cart is full
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________| ___________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 2
+Input the quantity of the product: 3
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 0
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________| ___________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 10                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 2
+Input the quantity of the product: 6
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 0
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________| ___________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 4                  | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 2
+Input the quantity of the product: 1
+
+Cart is full, type 1 to Checkout or -1 to Cancel: -1
+Thank you for shopping with us!
+
+===============================================================================
+Sample 8: the user wants to checkout, then cancels before payment
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 0
+Input the quantity of the product: 2
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 0
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 8                  | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 2
+Input the quantity of the product: 8
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 1
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 2 x Hershey's Milk Chocolate Bar 1.55oz |  2 x 1.99  | 3.98
+ 8 x Orbit Chewing Gum 15 sticks         |  8 x 1.39  | 11.12
+Order Total: 15.10
+
+Please review your order. Proceed with payment?
+Type 0 to confirm or any other key to cancel the order: h
+Thank you for shopping with us!
+
+===============================================================================
+Sample 9: the user pays by cash
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 0
+Input the quantity of the product: 3
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 1
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 3 x Hershey's Milk Chocolate Bar 1.55oz |  3 x 1.99  | 5.97
+Order Total: 5.97
+
+Please review your order. Proceed with payment?
+Type 0 to confirm or any other key to cancel the order: 0
+Input 0 for Cash, 1 for Credit card, 2 for Contactless: 0
+
+Input the payment amount: 6
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 3 x Hershey's Milk Chocolate Bar 1.55oz |  3 x 1.99  | 5.97
+Order Total: 5.97
+___
+Paid by: Cash
+Service Fee: 0.00
+Paid Amount: 6.00
+Change:0.03
+
+Thank you for shopping with us!
+You are authorized to retrieve your products.
+
+===============================================================================
+Sample 10: the user pays by credit card
+===============================================================================
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 2
+Input the quantity of the product: 8
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 1
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 8 x Orbit Chewing Gum 15 sticks         |  8 x 1.39  | 11.12
+Order Total: 11.12
+
+Please review your order. Proceed with payment?
+Type 0 to confirm or any other key to cancel the order: 0
+Input 0 for Cash, 1 for Credit card, 2 for Contactless: 1
+
+Input 0 for MasterCard, 1 for Visa, 2 for Discover, and 3 for American Express: 3
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 8 x Orbit Chewing Gum 15 sticks         |  8 x 1.39  | 11.12
+Order Total: 11.12
+___
+Paid by: Credit Card (American Express)
+Service Fee: 0.22
+Paid Amount: 11.34
+Change:0.00
+
+Thank you for shopping with us!
+You are authorized to retrieve your products.
+
+===============================================================================
+Sample 11: the user pays by contactless payment options
+===============================================================================
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 1
+Input the quantity of the product: 3
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 0
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 3                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 3
+Input the quantity of the product: 2
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 1
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 3 x Lays Classic Chips 13oz             |  3 x 2.99  | 8.97
+ 2 x Pepsi Soda 20oz Bottle              |  2 x 2.50  | 5.00
+Order Total: 13.97
+
+Please review your order. Proceed with payment?
+Type 0 to confirm or any other key to cancel the order: 0
+Input 0 for Cash, 1 for Credit card, 2 for Contactless: 2
+
+Input 0 for Google Wallet and 1 for Apple Pay: 1
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 3 x Lays Classic Chips 13oz             |  3 x 2.99  | 8.97
+ 2 x Pepsi Soda 20oz Bottle              |  2 x 2.50  | 5.00
+Order Total: 13.97
+___
+Paid by: Contactless Payment (Apple Pay)
+Service Fee: 0.14
+Paid Amount: 14.11
+Change:0.00
+
+Thank you for shopping with us!
+You are authorized to retrieve your products.
+
+===============================================================================
+Sample 12: the user hits enter without an input for the payment method
+===============================================================================
+
+Welcome to the Vending Machine
+------------------------------
+
+Code | Product Description                 | Available Quantity | Unit Price
+_____|_____________________________________|____________________|____________
+0    | Hershey's Milk Chocolate Bar 1.55oz | 10                 | 1.99      
+1    | Lays Classic Chips 13oz             | 6                  | 2.99      
+2    | Orbit Chewing Gum 15 sticks         | 13                 | 1.39      
+3    | Pepsi Soda 20oz Bottle              | 10                 | 2.50      
+
+Input the code of the product you want to purchase: 0
+Input the quantity of the product: 2
+
+Type 0 to Continue shopping, 1 to Checkout or -1 to Cancel: 1
+ Product                                 | Unit Price | Product Total
+-----------------------------------------|------------|--------------
+ 2 x Hershey's Milk Chocolate Bar 1.55oz |  2 x 1.99  | 3.98
+Order Total: 3.98
+
+Please review your order. Proceed with payment?
+Type 0 to confirm or any other key to cancel the order: 0
+Input 0 for Cash, 1 for Credit card, 2 for Contactless: 
+Payment failed.
+Thank you for shopping with us!
