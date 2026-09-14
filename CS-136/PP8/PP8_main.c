@@ -1,135 +1,193 @@
 #include "vending_lib.h"
 
-static bool parseIntInputMain(const char* input, int* outValue) {
-	char* endPtr = NULL;
-	long parsedValue;
+int main(void)
+{
+    Product products[NUM_PRODUCTS];
+    ShoppingCart cart = {0};
+    bool keepRunning = true;
+    bool paymentSuccess = false;
 
-	if(input[0] == '\n') {
-		return false;
-	}
+    stockMachine(products);
 
-	parsedValue = strtol(input, &endPtr, 10);
-	if(endPtr == input) {
-		return false;
-	}
+    printf("Welcome to the Vending Machine\n");
+    printf("------------------------------\n\n");
 
-	while(*endPtr == ' ' || *endPtr == '\t') {
-		endPtr++;
-	}
+    while(keepRunning)
+    {
+        char input[MAX_INPUT_LENGTH];
+        char *endPtr = NULL;
+        long parsedValue;
+        ProductType selectedProduct;
+        int selectedQuantity;
+        CartItem selectedItem;
+        int menuOption = CANCEL;
+        bool processMenu = true;
 
-	if(*endPtr != '\n' && *endPtr != '\0') {
-		return false;
-	}
+        displayProducts(products);
+        selectedProduct = getProduct();
 
-	*outValue = (int)parsedValue;
-	return true;
-}
+        if(selectedProduct == (ProductType)CANCEL)
+        {
+            keepRunning = false;
+            processMenu = false;
+        }
 
-int main(void) {
-	Product products[NUM_PRODUCTS];
-	ShoppingCart cart = {0};
-	bool keepRunning = true;
-	bool paymentSuccess = false;
+        if(processMenu)
+        {
+            selectedQuantity = getQuantity(selectedProduct, products);
 
-	stockMachine(products);
+            if(selectedQuantity == CANCEL)
+            {
+                cancelPurchase(&cart, products);
+                keepRunning = false;
+                processMenu = false;
+            }
+        }
 
-	printf("Welcome to the Vending Machine\n");
-	printf("------------------------------\n\n");
+        if(processMenu)
+        {
+            selectedItem = selectItem(products[selectedProduct], products, selectedQuantity);
 
-	while(keepRunning) {
-		char input[MAX_INPUT_LENGTH];
-		ProductType selectedProduct;
-		int selectedQuantity;
-		CartItem selectedItem;
-		int menuOption = CANCEL;
-		bool processMenu = true;
+            if(!addToCart(selectedItem, &cart))
+            {
+                products[selectedProduct].quantityInStock += selectedQuantity;
+            }
+        }
 
-		displayProducts(products);
-		selectedProduct = getProduct();
-		if(selectedProduct == (ProductType)CANCEL) {
-			keepRunning = false;
-			processMenu = false;
-		}
+        if(processMenu && cart.totalItems >= MAX_NUM_PRODUCTS)
+        {
+            bool hasValidOption = false;
 
-		if(processMenu) {
-			selectedQuantity = getQuantity(selectedProduct, products);
-			if(selectedQuantity == CANCEL) {
-				cancelPurchase(&cart, products);
-				keepRunning = false;
-				processMenu = false;
-			}
-		}
+            while(!hasValidOption)
+            {
+                printf("\nCart is full, type 1 to Checkout or -1 to Cancel: ");
 
-		if(processMenu) {
-			selectedItem = selectItem(products[selectedProduct], products, selectedQuantity);
-			if(!addToCart(selectedItem, &cart)) {
-				products[selectedProduct].quantityInStock += selectedQuantity;
-			}
-		}
+                if(fgets(input, sizeof(input), stdin) == NULL)
+                {
+                    printf("Invalid option. Please try again!\n");
+                }
+                else if(input[0] == '\n')
+                {
+                    printf("Invalid option. Please try again!\n");
+                }
+                else
+                {
+                    parsedValue = strtol(input, &endPtr, 10);
 
-		if(processMenu && cart.totalItems >= MAX_NUM_PRODUCTS) {
-			bool hasValidOption = false;
-			while(!hasValidOption) {
-				printf("\nCart is full, type 1 to Checkout or -1 to Cancel: ");
-				if(fgets(input, sizeof(input), stdin) == NULL) {
-					printf("Invalid option. Please try again!\n");
-				} else if(!parseIntInputMain(input, &menuOption)) {
-					printf("Invalid option. Please try again!\n");
-				} else if(menuOption == CHECKOUT || menuOption == CANCEL) {
-					hasValidOption = true;
-				} else {
-					printf("Invalid option. Please try again!\n");
-				}
-			}
-		} else if(processMenu) {
-			bool hasValidOption = false;
-			while(!hasValidOption) {
-				printf("\nType 0 to Continue shopping, 1 to Checkout or -1 to Cancel: ");
-				if(fgets(input, sizeof(input), stdin) == NULL) {
-					printf("Invalid option. Please try again!\n");
-				} else if(!parseIntInputMain(input, &menuOption)) {
-					printf("Invalid option. Please try again!\n");
-				} else if(menuOption == CONTINUE || menuOption == CHECKOUT || menuOption == CANCEL) {
-					hasValidOption = true;
-				} else {
-					printf("Invalid option. Please try again!\n");
-				}
-			}
-		}
+                    while(*endPtr == ' ' || *endPtr == '\t')
+                    {
+                        endPtr++;
+                    }
 
-		if(processMenu && menuOption == CONTINUE) {
-			printf("\n");
-		}
+                    if(endPtr == input || (*endPtr != '\n' && *endPtr != '\0'))
+                    {
+                        printf("Invalid option. Please try again!\n");
+                    }
+                    else
+                    {
+                        menuOption = (int)parsedValue;
 
-		if(processMenu && menuOption == CANCEL) {
-			cancelPurchase(&cart, products);
-			keepRunning = false;
-			processMenu = false;
-		}
+                        if(menuOption == CHECKOUT || menuOption == CANCEL)
+                        {
+                            hasValidOption = true;
+                        }
+                        else
+                        {
+                            printf("Invalid option. Please try again!\n");
+                        }
+                    }
+                }
+            }
+        }
+        else if(processMenu)
+        {
+            bool hasValidOption = false;
 
-		if(processMenu && menuOption == CHECKOUT) {
-			generateBill(&cart);
-			printf("\nPlease review your order. Proceed with payment?\n");
-			printf("Type 0 to confirm or any other key to cancel the order: ");
+            while(!hasValidOption)
+            {
+                printf("\nType 0 to Continue shopping, 1 to Checkout or -1 to Cancel: ");
 
-			if(fgets(input, sizeof(input), stdin) == NULL || input[0] != '0') {
-				cancelPurchase(&cart, products);
-				keepRunning = false;
-			} else if(pay(&cart)) {
-				paymentSuccess = true;
-				keepRunning = false;
-			} else {
-				printf("Payment failed.\n");
-				cancelPurchase(&cart, products);
-				keepRunning = false;
-			}
-		}
-	}
+                if(fgets(input, sizeof(input), stdin) == NULL)
+                {
+                    printf("Invalid option. Please try again!\n");
+                }
+                else if(input[0] == '\n')
+                {
+                    printf("Invalid option. Please try again!\n");
+                }
+                else
+                {
+                    parsedValue = strtol(input, &endPtr, 10);
 
-	printf("Thank you for shopping with us!\n");
-	if(paymentSuccess) {
-		printf("You are authorized to retrieve your products.\n");
-	}
+                    while(*endPtr == ' ' || *endPtr == '\t')
+                    {
+                        endPtr++;
+                    }
 
-	return 0;
+                    if(endPtr == input || (*endPtr != '\n' && *endPtr != '\0'))
+                    {
+                        printf("Invalid option. Please try again!\n");
+                    }
+                    else
+                    {
+                        menuOption = (int)parsedValue;
+
+                        if(menuOption == CONTINUE || menuOption == CHECKOUT || menuOption == CANCEL)
+                        {
+                            hasValidOption = true;
+                        }
+                        else
+                        {
+                            printf("Invalid option. Please try again!\n");
+                        }
+                    }
+                }
+            }
+        }
+
+        if(processMenu && menuOption == CONTINUE)
+        {
+            printf("\n");
+        }
+
+        if(processMenu && menuOption == CANCEL)
+        {
+            cancelPurchase(&cart, products);
+            keepRunning = false;
+            processMenu = false;
+        }
+
+        if(processMenu && menuOption == CHECKOUT)
+        {
+            generateBill(&cart);
+            printf("\nPlease review your order. Proceed with payment?\n");
+            printf("Type 0 to confirm or any other key to cancel the order: ");
+
+            if(fgets(input, sizeof(input), stdin) == NULL || input[0] != '0')
+            {
+                cancelPurchase(&cart, products);
+                keepRunning = false;
+            }
+            else if(pay(&cart))
+            {
+                paymentSuccess = true;
+                keepRunning = false;
+            }
+            else
+            {
+                printf("Payment failed.\n");
+                cancelPurchase(&cart, products);
+                keepRunning = false;
+            }
+        }
+    }
+
+    printf("Thank you for shopping with us!\n");
+
+    if(paymentSuccess)
+    {
+        printf("You are authorized to retrieve your products.\n");
+    }
+
+    return 0;
 }

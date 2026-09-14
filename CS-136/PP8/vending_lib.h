@@ -12,66 +12,82 @@
 #define CREDIT_FEE 0.02
 #define CONTACTLESS_FEE 0.01
 
-typedef enum ProductType {
-	CHOCOLATE_BAR,
-	CHIPS,
-	CHEWING_GUM,
-	PEPSI,
-	NUM_PRODUCTS
+typedef enum ProductType
+{
+    CHOCOLATE_BAR,
+    CHIPS,
+    CHEWING_GUM,
+    PEPSI,
+    NUM_PRODUCTS
 } ProductType;
 
-typedef enum Menu {
-	CANCEL = -1,
-	CONTINUE,
-	CHECKOUT,
-	INVALID_OPTION
+typedef enum Menu
+{
+    CANCEL = -1,
+    CONTINUE,
+    CHECKOUT,
+    INVALID_OPTION
 } Menu;
 
-typedef enum Payment {
-	CASH,
-	CREDIT,
-	CONTACTLESS
+typedef enum Payment
+{
+    CASH,
+    CREDIT,
+    CONTACTLESS
 } Payment;
 
-typedef enum CreditCard {
-	MASTERCARD,
-	VISA,
-	DISCOVER,
-	AMERICAN_EXPRESS
+typedef enum CreditCard
+{
+    MASTERCARD,
+    VISA,
+    DISCOVER,
+    AMERICAN_EXPRESS
 } CreditCard;
 
-typedef enum Contactless {
-	GOOGLE_WALLET,
-	APPLE_PAY
+typedef enum Contactless
+{
+    GOOGLE_WALLET,
+    APPLE_PAY
 } Contactless;
 
-typedef struct Product {
-	ProductType productType;
-	double price;
-	int quantityInStock;
+typedef struct Product
+{
+    ProductType productType;
+    double price;
+    int quantityInStock;
 } Product;
 
-typedef struct CartItem {
-	Product item;
-	int quantity;
+typedef struct CartItem
+{
+    Product item;
+    int quantity;
 } CartItem;
 
-typedef struct ShoppingCart {
-	CartItem shoppingCart[MAX_NUM_PRODUCTS];
-	int totalItems;
-	double totalCost;
+typedef struct ShoppingCart
+{
+    CartItem shoppingCart[MAX_NUM_PRODUCTS];
+    int totalItems;
+    double totalCost;
 } ShoppingCart;
 
-extern const char* productLabels[NUM_PRODUCTS];
+extern const char *productLabels[NUM_PRODUCTS];
 
 void stockMachine(Product products[NUM_PRODUCTS]);
+
 void displayProducts(const Product products[NUM_PRODUCTS]);
-ProductType getProduct(void);
+
+ProductType getProduct();
+
 int getQuantity(ProductType productType, const Product products[NUM_PRODUCTS]);
+
 CartItem selectItem(Product item, Product products[NUM_PRODUCTS], int quantity);
-bool addToCart(CartItem item, ShoppingCart* cart);
-void cancelPurchase(ShoppingCart* cart, Product products[NUM_PRODUCTS]);
-void generateBill(const ShoppingCart* cart);
-bool pay(const ShoppingCart* cart);
+
+bool addToCart(CartItem item, ShoppingCart *cart);
+
+void cancelPurchase(ShoppingCart *cart, Product products[NUM_PRODUCTS]);
+
+void generateBill(const ShoppingCart *cart);
+
+bool pay(const ShoppingCart *cart);
 
 #endif
