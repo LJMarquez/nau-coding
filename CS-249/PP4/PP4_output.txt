@@ -1,0 +1,188 @@
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Order #1 - John Doe, Category: 0, Priority: 5, Staff Score: 80,Cuisine: Italian, Customer Satisfaction Score: -10
+Order #2 - Jane Smith, Category: 1, Priority: 3, Staff Score: 90,Cuisine: Mexican, Customer Satisfaction Score: 15
+Order #3 - Bob Johnson, Category: 2, Priority: 4, Staff Score: 75,Cuisine: Chinese, Customer Satisfaction Score: -5
+Order #4 - Alice Brown, Category: 0, Priority: 2, Staff Score: 85,Cuisine: Italian, Customer Satisfaction Score: 10
+Order #5 - Charlie Davis, Category: 1, Priority: 1, Staff Score: 70,Cuisine: Mexican, Customer Satisfaction Score: 0
+Order #6 - Emily Clark, Category: 2, Priority: 6, Staff Score: 95,Cuisine: Chinese, Customer Satisfaction Score: 20
+Order #7 - David Wilson, Category: 0, Priority: 5, Staff Score: 60,Cuisine: Italian, Customer Satisfaction Score: -5
+Order #8 - Sarah Lee, Category: 1, Priority: 2, Staff Score: 88,Cuisine: Mexican, Customer Satisfaction Score: 5
+Order #9 - Laura Parker, Category: 0, Priority: 1, Staff Score: 90,Cuisine: French, Customer Satisfaction Score: -5
+Order #10 - Grace Mitchell, Category: 1, Priority: 4, Staff Score: 70,Cuisine: Indian, Customer Satisfaction Score: 10
+Order #11 - Brandon Moore, Category: 2, Priority: 3, Staff Score: 95,Cuisine: Indian, Customer Satisfaction Score: 5
+Order #12 - Linda Green, Category: 0, Priority: 3, Staff Score: 67,Cuisine: Italian, Customer Satisfaction Score: -10
+Order #13 - Laura Parker, Category: 0, Priority: 1, Staff Score: 90,Cuisine: French, Customer Satisfaction Score: -5
+Order #14 - George King, Category: 0, Priority: 3, Staff Score: 76,Cuisine: Indian, Customer Satisfaction Score: 0
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Orders sorted by category.
+Order #1 - John Doe, Category: 0, Priority: 5, Staff Score: 80,Cuisine: Italian, Customer Satisfaction Score: -10
+Order #14 - George King, Category: 0, Priority: 3, Staff Score: 76,Cuisine: Indian, Customer Satisfaction Score: 0
+Order #4 - Alice Brown, Category: 0, Priority: 2, Staff Score: 85,Cuisine: Italian, Customer Satisfaction Score: 10
+Order #13 - Laura Parker, Category: 0, Priority: 1, Staff Score: 90,Cuisine: French, Customer Satisfaction Score: -5
+Order #7 - David Wilson, Category: 0, Priority: 5, Staff Score: 60,Cuisine: Italian, Customer Satisfaction Score: -5
+Order #9 - Laura Parker, Category: 0, Priority: 1, Staff Score: 90,Cuisine: French, Customer Satisfaction Score: -5
+Order #12 - Linda Green, Category: 0, Priority: 3, Staff Score: 67,Cuisine: Italian, Customer Satisfaction Score: -10
+Order #8 - Sarah Lee, Category: 1, Priority: 2, Staff Score: 88,Cuisine: Mexican, Customer Satisfaction Score: 5
+Order #2 - Jane Smith, Category: 1, Priority: 3, Staff Score: 90,Cuisine: Mexican, Customer Satisfaction Score: 15
+Order #10 - Grace Mitchell, Category: 1, Priority: 4, Staff Score: 70,Cuisine: Indian, Customer Satisfaction Score: 10
+Order #5 - Charlie Davis, Category: 1, Priority: 1, Staff Score: 70,Cuisine: Mexican, Customer Satisfaction Score: 0
+Order #11 - Brandon Moore, Category: 2, Priority: 3, Staff Score: 95,Cuisine: Indian, Customer Satisfaction Score: 5
+Order #6 - Emily Clark, Category: 2, Priority: 6, Staff Score: 95,Cuisine: Chinese, Customer Satisfaction Score: 20
+Order #3 - Bob Johnson, Category: 2, Priority: 4, Staff Score: 75,Cuisine: Chinese, Customer Satisfaction Score: -5
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Orders reset to original.
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Enter k: The 4-th highest priority is 3
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Duplicate found: Laura Parker, Category: 0, Priority: 1, Staff Score: 90, Cuisine: French, Customer Satisfaction: -5
+End of duplicated order's list.
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Unique triplets that sum to zero:
+Triplet found: [-10, -10, 20]
+Triplet found: [-10, -5, 15]
+Triplet found: [-10, 0, 10]
+Triplet found: [-10, 5, 5]
+Triplet found: [-5, -5, 10]
+Triplet found: [-5, 0, 5]
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Grouped Orders by Cuisine:
+"Chinese": ["Bob Johnson", "Emily Clark"]
+"French": ["Laura Parker", "Laura Parker"]
+"Indian": ["Grace Mitchell", "Brandon Moore", "George King"]
+"Italian": ["John Doe", "Alice Brown", "David Wilson", "Linda Green"]
+"Mexican": ["Jane Smith", "Charlie Davis", "Sarah Lee"]
+
+Orders sorted by cuisine:
+Order #3 - Bob Johnson, Category: 2, Priority: 4, Staff Score: 75,Cuisine: Chinese, Customer Satisfaction Score: -5
+Order #6 - Emily Clark, Category: 2, Priority: 6, Staff Score: 95,Cuisine: Chinese, Customer Satisfaction Score: 20
+Order #9 - Laura Parker, Category: 0, Priority: 1, Staff Score: 90,Cuisine: French, Customer Satisfaction Score: -5
+Order #13 - Laura Parker, Category: 0, Priority: 1, Staff Score: 90,Cuisine: French, Customer Satisfaction Score: -5
+Order #10 - Grace Mitchell, Category: 1, Priority: 4, Staff Score: 70,Cuisine: Indian, Customer Satisfaction Score: 10
+Order #11 - Brandon Moore, Category: 2, Priority: 3, Staff Score: 95,Cuisine: Indian, Customer Satisfaction Score: 5
+Order #14 - George King, Category: 0, Priority: 3, Staff Score: 76,Cuisine: Indian, Customer Satisfaction Score: 0
+Order #1 - John Doe, Category: 0, Priority: 5, Staff Score: 80,Cuisine: Italian, Customer Satisfaction Score: -10
+Order #4 - Alice Brown, Category: 0, Priority: 2, Staff Score: 85,Cuisine: Italian, Customer Satisfaction Score: 10
+Order #7 - David Wilson, Category: 0, Priority: 5, Staff Score: 60,Cuisine: Italian, Customer Satisfaction Score: -5
+Order #12 - Linda Green, Category: 0, Priority: 3, Staff Score: 67,Cuisine: Italian, Customer Satisfaction Score: -10
+Order #2 - Jane Smith, Category: 1, Priority: 3, Staff Score: 90,Cuisine: Mexican, Customer Satisfaction Score: 15
+Order #5 - Charlie Davis, Category: 1, Priority: 1, Staff Score: 70,Cuisine: Mexican, Customer Satisfaction Score: 0
+Order #8 - Sarah Lee, Category: 1, Priority: 2, Staff Score: 88,Cuisine: Mexican, Customer Satisfaction Score: 5
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Orders reset to original.
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Emily Clark: 95
+Brandon Moore: 95
+Laura Parker: 90
+Jane Smith: 90
+Laura Parker: 90
+Sarah Lee: 88
+Alice Brown: 85
+John Doe: 80
+George King: 76
+Bob Johnson: 75
+Charlie Davis: 70
+Grace Mitchell: 70
+Linda Green: 67
+David Wilson: 60
+
+QuickBite Order Management System
+1. View Orders
+2. Reset Orders to Original
+3. Sort Orders by Category
+4. Find k-th Highest Priority
+5. Detect Duplicate Orders
+6. Find Customer Service Score Triplets
+7. Sort and Group Orders by Cuisine
+8. Print Staff by Performance
+9. Exit
+Choose an option: Exiting...
