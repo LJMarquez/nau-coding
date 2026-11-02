@@ -191,9 +191,9 @@ bool validateDeliveryPath(Node* routeHead)
 
     while(currentNode != NULL)
     {
-        if(strcmp(currentNode->data, "(") == 0 ||
-            strcmp(currentNode->data, "{") == 0 ||
-            strcmp(currentNode->data, "[") == 0)
+        if(currentNode->data[0] == '(' ||
+            currentNode->data[0] == '{' ||
+            currentNode->data[0] == '[')
         {
             bracketStack.push(currentNode->data);
         }
@@ -205,16 +205,18 @@ bool validateDeliveryPath(Node* routeHead)
 
             if(popped)
             {
-                if(strcmp(openingBracket, "(") == 0 &&
-                    strcmp(currentNode->data, ")") == 0)
+                if(openingBracket[0] == '(' &&
+                    currentNode->data[0] == ')')
                 {
                     matchingBracket = true;
                 }
-                else if(strcmp(openingBracket, "{") == 0 && strcmp(currentNode->data, "}") == 0)
+                else if(openingBracket[0] == '{' &&
+                    currentNode->data[0] == '}')
                 {
                     matchingBracket = true;
                 }
-                else if (strcmp(openingBracket, "[") == 0 && strcmp(currentNode->data, "]") == 0)
+                else if(openingBracket[0] == '[' &&
+                    currentNode->data[0] == ']')
                 {
                     matchingBracket = true;
                 }
@@ -360,7 +362,10 @@ int evaluatePathConditions(Node* expressionHead)
 
     while(currentNode != NULL)
     {
-        bool isOperator = strcmp(currentNode->data, "+") == 0 || strcmp(currentNode->data, "-") == 0 || strcmp(currentNode->data, "*") == 0 || strcmp(currentNode->data, "/") == 0;
+        bool isOperator = currentNode->data[0] == '+' ||
+            currentNode->data[0] == '-' ||
+            currentNode->data[0] == '*' ||
+            currentNode->data[0] == '/';
 
         if(!isOperator)
         {
@@ -377,15 +382,15 @@ int evaluatePathConditions(Node* expressionHead)
             int leftNumber = atoi(leftValue);
             int calculatedValue = 0;
 
-            if(strcmp(currentNode->data, "+") == 0)
+            if(currentNode->data[0] == '+')
             {
                 calculatedValue = leftNumber + rightNumber;
             }
-            else if(strcmp(currentNode->data, "-") == 0)
+            else if(currentNode->data[0] == '-')
             {
                 calculatedValue = leftNumber - rightNumber;
             }
-            else if(strcmp(currentNode->data, "*") == 0)
+            else if(currentNode->data[0] == '*')
             {
                 calculatedValue = leftNumber * rightNumber;
             }
@@ -541,7 +546,13 @@ bool Stack::pop(char* out)
     }
 
     Node* removedNode = top;
-    strcpy(out, removedNode->data);
+    int characterIndex = 0;
+    while(removedNode->data[characterIndex] != '\0')
+    {
+        out[characterIndex] = removedNode->data[characterIndex];
+        characterIndex++;
+    }
+    out[characterIndex] = '\0';
     top = removedNode->next;
     delete removedNode;
     return true;
@@ -638,7 +649,13 @@ bool Queue::dequeue(char* out)
     }
 
     Node* removedNode = front;
-    strcpy(out, removedNode->data);
+    int characterIndex = 0;
+    while(removedNode->data[characterIndex] != '\0')
+    {
+        out[characterIndex] = removedNode->data[characterIndex];
+        characterIndex++;
+    }
+    out[characterIndex] = '\0';
     front = removedNode->next;
     delete removedNode;
 
