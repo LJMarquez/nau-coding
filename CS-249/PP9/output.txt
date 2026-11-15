@@ -1,0 +1,333 @@
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: AAPL
+Enter Stock Performance: .5
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: GOOGL
+Enter Stock Performance: .7
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: AMZN
+Enter Stock Performance: .4
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1   
+Enter Stock Identifier: MSFT
+Enter Stock Performance: .8
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: TSLA
+Enter Stock Performance: .6
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: FB
+Enter Stock Performance: .5
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: NFLX
+Enter Stock Performance: .8
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: NVDA
+Enter Stock Performance: .4
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: INTC
+Enter Stock Performance: .2
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 1
+Enter Stock Identifier: AMD
+Enter Stock Performance: .7
+Stock added successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 3
+Stocks in the market:
+Identifier: MSFT, Performance: 0.80
+Identifier: GOOGL, Performance: 0.70
+Identifier: NFLX, Performance: 0.80
+Identifier: AAPL, Performance: 0.50
+Identifier: AMD, Performance: 0.70
+Identifier: AMZN, Performance: 0.40
+Identifier: FB, Performance: 0.50
+Identifier: NVDA, Performance: 0.40
+Identifier: INTC, Performance: 0.20
+Identifier: TSLA, Performance: 0.60
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 2
+Enter Stock Identifier to Remove: FB
+Stock removed successfully
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 3
+Stocks in the market:
+Identifier: MSFT, Performance: 0.80
+Identifier: GOOGL, Performance: 0.70
+Identifier: NFLX, Performance: 0.80
+Identifier: AAPL, Performance: 0.50
+Identifier: AMD, Performance: 0.70
+Identifier: AMZN, Performance: 0.40
+Identifier: TSLA, Performance: 0.60
+Identifier: NVDA, Performance: 0.40
+Identifier: INTC, Performance: 0.20
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 4
+Stocks in the market:
+Identifier: INTC, Performance: 0.20
+Identifier: AMZN, Performance: 0.40
+Identifier: NVDA, Performance: 0.40
+Identifier: AAPL, Performance: 0.50
+Identifier: TSLA, Performance: 0.60
+Identifier: AMD, Performance: 0.70
+Identifier: GOOGL, Performance: 0.70
+Identifier: NFLX, Performance: 0.80
+Identifier: MSFT, Performance: 0.80
+Market successfully sorted
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 3
+Stocks in the market:
+Identifier: MSFT, Performance: 0.80
+Identifier: GOOGL, Performance: 0.70
+Identifier: NFLX, Performance: 0.80
+Identifier: AAPL, Performance: 0.50
+Identifier: AMD, Performance: 0.70
+Identifier: AMZN, Performance: 0.40
+Identifier: TSLA, Performance: 0.60
+Identifier: NVDA, Performance: 0.40
+Identifier: INTC, Performance: 0.20
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 5
+Enter value of K: 2
+Kth Largest Stock: Identifier: NFLX, Performance: 0.80
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 5
+Enter value of K: 6
+Kth Largest Stock: Identifier: AAPL, Performance: 0.50
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 6
+Enter value of K: 1
+Top 1 frequent stocks:
+Performance: 0.80 (Occurrences: 2)
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 6
+Enter value of K: 2
+Top 2 frequent stocks:
+Performance: 0.80 (Occurrences: 2)
+Performance: 0.70 (Occurrences: 2)
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 6
+Enter value of K: 5
+Top 5 frequent stocks:
+Performance: 0.80 (Occurrences: 2)
+Performance: 0.70 (Occurrences: 2)
+Performance: 0.40 (Occurrences: 2)
+Performance: 0.60 (Occurrences: 1)
+Performance: 0.50 (Occurrences: 1)
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 6
+Enter value of K: 10
+Invalid value of K
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 6
+Enter value of K: 8
+There is not enough performances.
+Showing the top 6 frequent stocks:
+Performance: 0.80 (Occurrences: 2)
+Performance: 0.70 (Occurrences: 2)
+Performance: 0.40 (Occurrences: 2)
+Performance: 0.60 (Occurrences: 1)
+Performance: 0.50 (Occurrences: 1)
+Performance: 0.20 (Occurrences: 1)
+
+Stock Market Analysis Menu:
+1. Add Stock
+2. Remove Stock
+3. View All Stocks
+4. Sort Stocks by Performance
+5. Find Kth Largest Stock
+6. Find Top K Frequent Stocks
+7. Exit
+Enter your choice: 7
+Come back another time!

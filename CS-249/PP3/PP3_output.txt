@@ -1,0 +1,58 @@
+Dear TechnoCity Restorer, the Untzler system needs your expertise to restore order and functionality! Each step you take helps us uncover vital information and secure our city.
+
+================================================================
+
+The Hidden Code in the Data Breach:
+
+In the chaos of the cyberattack, essential security codes have been scrambled. Your task was to identify the unique code amidst the duplicates that has been corrupted beyond recognition.
+
+The unique code in the data breach is: 15
+
+You've successfully pinpointed the unique code that will help us reestablish secure access controls. Great job!
+
+=================================================================
+
+Balancing the System Logs:
+
+Our system logs are in disarray, and we need to find the balancepoint where the activity before equals the activity after. This balance point is crucial for assessing the impact of the attack and ensuring stability.
+
+The balance point in the system logs is at index: 4
+
+You've found the equilibrium point, restoring balance to our logs and paving the way for further analysis.
+
+================================================================
+
+The scrambled message can be decoded to match the reference message.
+
+You've successfully decoded the messages, unlocking vital information necessary for a comprehensive response to the attack.
+
+================================================================
+
+Uncovering the Critical System Log:
+
+Among the clutter of system logs, the most significant sequence of events is hidden. Finding the maximum sum of a contiguous subarray reveals the most critical period of activity.
+
+The maximum sum of a contiguous subarray is: 6
+
+Congratulations! You've identified the most impactful period of activity, providing key insights into the attack's effects.
+
+================================================================
+
+Navigating Through Rotated Data:
+
+A critical part of our dataset was rotated, making searches challenging. Your task was to locate a specific entry within this rotated sorted array.
+
+The data element 3 is present at index: 6
+
+You've successfully navigated the rotated data, retrieving crucial information from the disarrayed dataset.
+
+================================================================
+
+Finding the Critical Minimum:
+
+The dataset's rotation has made it necessary to find the minimum value within the rotated sorted array. This value is crucial for diagnostic purposes.
+
+The minimum value in the rotated sorted array is: 1
+
+You've identified the minimum value, helping us understand the  rotation's impact and facilitate accurate analysis.
+

@@ -264,23 +264,23 @@ int critical_minimum(int array[], int size)
 
     // perform binary search in the rotated array
         // while the array is not empty
-    while(left <= right)
+    while(left < right)
     {
-    // TODO: implement the binary search loop
-    //   - calculate the middle index
-    int middle = left + (right - left) / 2;
-    //   - if the middle element is greater than the rightmost element
-    if(array[middle] > array[right])
-    {
-    //       - adjust left pointer to search the right side
-        left = middle + 1;
-    }
-    //   - otherwise
-    else
-    {
-    //       - adjust right pointer to search the left side
-        right = middle;
-    }
+        // TODO: implement the binary search loop
+        //   - calculate the middle index
+        int middle = left + (right - left) / 2;
+        //   - if the middle element is greater than the rightmost element
+        if(array[middle] > array[right])
+        {
+        //       - adjust left pointer to search the right side
+            left = middle + 1;
+        }
+        //   - otherwise
+        else
+        {
+        //       - adjust right pointer to search the left side
+            right = middle;
+        }
     }
 
     // return the minimum element found
